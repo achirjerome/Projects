@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SPGS.master.cs" Inherits="DesignTemplate1.SPGS.SPGS" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>SPGS Examination Officer</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>    
+    <style type="text/css">
+        .auto-style1 {
+            color: #FFFFFF;
+            font-size: x-large;
+        }
+        .auto-style2 {
+            font-family: "Monotype Corsiva";
+        }
+        .button {
+          border: none;
+          background-color:white;
+          /*color: white;*/
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!--wrapper start-->
+        <div class="wrapper">
+            <!--header menu start-->
+            <div class="header">
+                <div class="header-menu">
+                    <div class="title">Menu <span> </span></div>
+                    <div class="sidebar-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <span class="auto-style1"><strong class="auto-style2">SPGS Examination Officer</strong></span>
+                    <ul>
+                        <button type="button" class="button" runat="server"><i class="fa fa-home"></i></button>
+                        <button type="button" class="button" runat="server"><i class="fa fa-power-off"></i></button>
+                        <%--<li><a href="test.aspx"><i class="fas fa-power-off"></i></a></li>--%>
+                    </ul>
+                </div>
+
+            </div>
+            <!--header menu end-->
+            <!--sidebar start-->
+            <div class="sidebar">
+                <div class="sidebar-menu">
+                    <center class="profile">
+                        <%--finally I found solution for that in .aspx I 
+                        added runat="server" to HTML tag <img runat="server" 
+                            alt=" id="image" Width="600" Height="800" > in aspx.cs 
+                        I added image.Src = vPath; Now the img tag can view images based on the input of the user--%>                        <%--<img src="/Pictures/jerome.jpg" alt="">--%>
+                        <img runat="server" id="user_image" alt="User Image" />
+                        <p>
+                            <asp:Label ID="label_name" runat="server"></asp:Label>
+                        </p>
+                    </center>
+                    <li class="item">
+                        <a href="Adminpage" class="menu-btn">
+                            <i class="fas fa-desktop"></i><span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="item" id="profile">
+                        <a href="#profile" class="menu-btn">
+                            <i class="fas fa-user-circle"></i><span>College Management <i class="fas fa-chevron-down drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu">
+                            <a href="StudentReg.aspx"><i class="fas fa-user"></i><span>Add Department</span></a>
+                            <a href="addCourses.aspx"><i class="fas fa-user"></i><span>Add College</span></a>
+                            <a href="StudentReg.aspx"><i class="fas fa-eye"></i><span>View Department</span></a>
+                            <a href="addCourses.aspx"><i class="fas fa-eye"></i><span>View College</span></a>
+                            <a href="StudentReg.aspx"><i class="fas fa-eye"></i><span>View Result</span></a>
+                            <a href="addCourses.aspx"><i class="fas fa-eye"></i><span>View Students</span></a>
+                        </div>
+                    </li>
+                    <li class="item" id="messages">
+                        <a href="#messages" class="menu-btn">
+                            <i class="fas fa-comment-alt"></i><span>Messages <i class="fas fa-chevron-down drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu">
+                            <a href="exam_compute"><i class="fas fa-comment-alt"></i><span>Send</span></a>
+                        </div>
+                    </li>
+                    <li class="item" id="settings">
+                        <a href="#settings" class="menu-btn">
+                            <i class="fas fa-cog"></i><span>Settings <i class="fas fa-chevron-down drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu">
+                            <a href="#"><i class="fas fa-lock"></i><span>Password</span></a>
+                            <a href="#"><i class="fas fa-language"></i><span>Language</span></a>
+                            
+                        </div>
+                    </li>
+                                        
+                </div>
+            </div>
+            <!--sidebar end-->
+            <!--main container start-->
+
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+
+            <div class="main-container">
+                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+            </div>
+            <!--main container end-->
+        </div>
+        <!--wrapper end-->
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $(".sidebar-btn").click(function(){
+                $(".wrapper").toggleClass("collapse");
+            });
+        });
+        </script>
+    </form>
+</body>
+</html>

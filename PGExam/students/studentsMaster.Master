@@ -1,0 +1,121 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="studentsMaster.master.cs" Inherits="DesignTemplate1.students.studentsMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Students Page</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>    
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!--wrapper start-->
+        <div class="wrapper">
+            <!--header menu start-->
+            <div class="header">
+                <div class="header-menu">
+                    <div class="title">Students <span> Registration</span></div>
+                    <div class="sidebar-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                   
+                    <ul>
+
+                        <%--<li><a href="#"><i class="fas fa-search"></i></a></li>
+                        <li><a href="#"><i class="fas fa-bell"></i></a></li>--%>
+                        <asp:ImageButton ID="ImageButton2" runat="server"  Height="38px" ImageUrl="~/Admin/Admin_Images/home.jpg" Width="69px" />
+                        <asp:ImageButton ID="ImageButton1" runat="server" class="fas fa-power-off" Height="38px" ImageUrl="~/Admin/Admin_Images/power-button.png" Width="42px" />
+                        <%--<li><a href="test.aspx"><i class="fas fa-
+                            off"></i></a></li>--%>
+                    </ul>
+                </div>
+
+            </div>
+            <!--header menu end-->
+            <!--sidebar start-->
+            <div class="sidebar">
+                <div class="sidebar-menu">
+                    <center class="profile">
+                        <%--finally I found solution for that in .aspx I 
+                        added runat="server" to HTML tag <img runat="server" 
+                            alt=" id="image" Width="600" Height="800" > in aspx.cs 
+                        I added image.Src = vPath; Now the img tag can view images based on the input of the user--%><%--<img src="/Pictures/jerome.jpg" alt="">--%>
+                        <img runat="server" id="Lecturer_image" alt="Lecturer Image" />
+                        <p>
+                            <asp:Label ID="label_name" runat="server"></asp:Label>
+                        </p>
+                    </center>
+                    <li class="item">
+                        <a href="studentspage" class="menu-btn">
+                            <i class="fas fa-desktop"></i><span>Dashboard</span>
+                        </a>
+                    </li>
+                    
+                    <li class="item" id="Reg">
+                        <a href="#Reg" class="menu-btn">
+                            <i class="fas fa-keyboard"></i><span>Registration <i class="fas fa-chevron-down drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu">
+                            <a href="exam_upload"><i class="fas fa-keyboard"></i><span>Bio Data</span></a>
+                           
+                        </div>
+                         <div class="sub-menu">
+                            <a href="exam_upload"><i class="fas fa-keyboard"></i><span>Courses</span></a>
+                           
+                        </div>
+                    </li>
+
+                    <li class="item" id="view">
+                        <a href="#view" class="menu-btn">
+                            <i class="fas fa-eye"></i><span>View <i class="fas fa-chevron-down drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu">
+                            <a href="#"><i class="fas fa-eye"></i><span>Bio data</span></a>
+                        </div>
+                        <div class="sub-menu">
+                            <a href="#"><i class="fas fa-eye"></i><span>Courses</span></a>
+                        </div>
+                    </li>
+                   
+
+                    <li class="item" id="settings">
+                        <a href="#settings" class="menu-btn">
+                            <i class="fas fa-cog"></i><span>Settings <i class="fas fa-chevron-down drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu">
+                            <a href="#"><i class="fas fa-lock"></i><span>Password</span></a>
+                            
+                        </div>
+                    </li>
+                                        
+                </div>
+            </div>
+            <!--sidebar end-->
+            <!--main container start-->
+
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+
+            <div class="main-container">
+                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+            </div>
+            <!--main container end-->
+        </div>
+        <!--wrapper end-->
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $(".sidebar-btn").click(function(){
+                $(".wrapper").toggleClass("collapse");
+            });
+        });
+        </script>
+        
+    </form>
+</body>
+</html>
