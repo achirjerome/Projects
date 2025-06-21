@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="SUBEB_Staff_Online_Management_System.Admin.Admin" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent1" runat="server">
+    <table class="nav-justified">
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Panel ID="Panel2" runat="server" BackColor="#00CC00" BorderColor="#660033" BorderStyle="Solid" BorderWidth="2px" CssClass="auto-style1" Height="38px" style="text-align: right" Width="641px">
+                    <asp:Menu ID="Menu2" runat="server" Orientation="Horizontal" style="font-weight: 700; font-size: medium; text-align: left;">
+                        <DynamicHoverStyle BackColor="#CCCCCC" />
+                        <DynamicMenuItemStyle BackColor="Black" Font-Size="Medium" ForeColor="White" HorizontalPadding="5px" ItemSpacing="5px" VerticalPadding="5px" />
+                        <Items>
+                            <asp:MenuItem Text="Staff" Value="Staff" Selectable="False">
+                                <asp:MenuItem NavigateUrl="~/Admin/staffRegistration.aspx" Text="Registration" Value="Registration"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/transfer.aspx" Text="Transfer" Value="Transfer"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/StaffPromotion.aspx" Text="Promotion" Value="Promotion"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/Retire.aspx" Text="Retirement" Value="Retirement"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="View" Value="View" Selectable="False">
+                                <asp:MenuItem Text="Staff List" Value="Staff List" NavigateUrl="~/Admin/SummaryStaffList.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Staff Transfer History" Value="Staff Transfer History" NavigateUrl="~/Admin/viewWorkHistory.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/staffPromotionHistory.aspx" Text="Promotion History" Value="Promotion History"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/Retirement.aspx" Text="Due for Retirement" Value="Due for Retirement"></asp:MenuItem>
+                                <asp:MenuItem Text="Applications" Value="Applications"></asp:MenuItem>
+                                <asp:MenuItem Selectable="False" Text="Retirement" Value="Retirement">
+                                    <asp:MenuItem NavigateUrl="~/Admin/Retirement.aspx" Text="Due for Retirement" Value="Due for Retirement"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/Admin/AdminRetirees.aspx" Text="Retirees" Value="Retirees"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/ViewAppilcations.aspx" Text="Applications" Value="Applications"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/Messaging.aspx" Text="Message" Value="Message"></asp:MenuItem>
+                        </Items>
+                        <StaticHoverStyle BorderStyle="Solid" BorderWidth="2px" />
+                        <StaticMenuItemStyle ForeColor="White" HorizontalPadding="20px" ItemSpacing="10px" VerticalPadding="10px" />
+                    </asp:Menu>
+                </asp:Panel>
+                <ajaxToolkit:DropShadowExtender ID="Panel2_DropShadowExtender" runat="server" BehaviorID="Panel2_DropShadowExtender" TargetControlID="Panel2" />
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</asp:Content>

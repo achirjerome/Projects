@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Chairman.master.cs" Inherits="SUBEB_Staff_Online_Management_System.Chairman.Chairman" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent1" runat="server">
+    <table class="nav-justified">
+    <tr>
+        <td colspan="2">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td style="height: 22px" colspan="2">
+        </td>
+    </tr>
+    <tr>
+        <td style="height: 9px; width: 644px;">
+            <asp:Panel ID="Panel1" runat="server" BackColor="#00CC00" BorderColor="Maroon" BorderStyle="Solid" BorderWidth="2px" Height="41px" Width="616px">
+                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem Text="View Staff List" Value="View Staff List" NavigateUrl="~/Chairman/StaffList.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Staff Count" Value="Staff Count" NavigateUrl="~/Chairman/StaffCount.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="View Payments" Value="View Payments" NavigateUrl="~/Chairman/viewPayments.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Scrutiny" Value="Scrutiny" NavigateUrl="~/Chairman/Scrutiny.aspx"></asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle BorderColor="White" BorderStyle="Solid" BorderWidth="2px" />
+                    <StaticMenuItemStyle Font-Size="Medium" ForeColor="Black" HorizontalPadding="10px" ItemSpacing="10px" VerticalPadding="3px" />
+                </asp:Menu>
+            </asp:Panel>
+        &nbsp;&nbsp;&nbsp;
+        </td>
+        <td style="font-size: medium; font-family: Georgia, 'Times New Roman', Times, serif;" class="text-left">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <table class="nav-justified">
+                        <tr>
+                            <td colspan="2"><strong><em>Notifications</em></strong></td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 175px">
+                                
+                                <asp:Menu ID="Menu2" runat="server" Orientation="Horizontal" style="font-size: x-small">
+                                    <Items>
+                                        <asp:MenuItem Selectable="False" Text="Registration" Value="Registration">
+                                            <asp:MenuItem NavigateUrl="~/Chairman/RegApproval.aspx" Text="LGEA" Value="LGEA"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Chairman/RegApprovalHqtrs.aspx" Text="Hqtrs" Value="Hqtrs"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                    </Items>
+                                </asp:Menu>
+                                <asp:Label ID="lblReg" runat="server" Font-Size="X-Small" ForeColor="#FF3300"></asp:Label>
+                            </td>
+                            <td style="font-size: x-small">&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            &nbsp;</td>
+    </tr>
+</table>
+</asp:Content>

@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ES.master.cs" Inherits="SUBEB_Staff_Online_Management_System.ES.ES" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent1" runat="server">
+    <table class="nav-justified" style="width: 99%">
+        <tr>
+            <td>
+                <table class="nav-justified">
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <hr />
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                                <Items>
+                                    <asp:MenuItem></asp:MenuItem>
+                                </Items>
+                            </asp:Menu>
+                            <asp:Menu ID="Menu2" runat="server" Orientation="Horizontal">
+                                <DynamicHoverStyle BackColor="#CCCCCC" />
+                                <DynamicMenuItemStyle Font-Size="Medium" ForeColor="Black" HorizontalPadding="10px" ItemSpacing="5px" VerticalPadding="5px" />
+                                <Items>
+                                    <asp:MenuItem ImageUrl="~/ES/Images/Finance.jpg" ToolTip="Finance" NavigateUrl="~/Admin/transfer.aspx">
+                                        <asp:MenuItem Text="Download PV" Value="Download PV"></asp:MenuItem>
+                                        <asp:MenuItem Text="New Item" Value="New Item"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem ImageUrl="~/ES/Images/Divider.jpg"></asp:MenuItem>
+                                    <asp:MenuItem ImageUrl="~/ES/Images/Transfer.png" Selectable="False" ToolTip="Staff Transfer"></asp:MenuItem>
+                                    <asp:MenuItem ImageUrl="~/ES/Images/Divider.jpg" Selectable="False"></asp:MenuItem>
+                                    <asp:MenuItem ImageUrl="~/ES/Images/View.png" ToolTip="view">
+                                        <asp:MenuItem Text="Staff Strength" Value="Staff Strength"></asp:MenuItem>
+                                        <asp:MenuItem Text="Staff Profile" Value="Staff Profile"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                </Items>
+                                <StaticHoverStyle BorderStyle="Solid" BorderWidth="2px" />
+                            </asp:Menu>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><hr /></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</asp:Content>

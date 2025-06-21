@@ -1,0 +1,40 @@
+﻿
+* {
+    box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 20px;
+    
+    /* Should be removed. Only for demonstration */
+}
+
+.left {
+    width: 5%;
+    height: 400px;
+}
+
+.middle {
+    width: 35%;
+    height: 450px;
+}
+
+.right {
+    width: 55%;
+    height: 450px;
+}
+
+.Summary1, Summary2, Summary3, Summary4 {
+    width: 25%;
+    height: 500px;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Staff.master.cs" Inherits="SUBEB_Staff_Online_Management_System.Staff.Staff" %>
+<%--<asp:Content ID="Content1" ContentPlaceHolderID="MainContent1" runat="server">
+    <style type="text/css">
+        .style16
+        {
+            width: 99%;
+        }
+        .style17
+        {
+        }
+        .auto-style1 {
+            background-color: #00CC00;
+        }
+    </style>
+</asp:Content>--%>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent1" runat="server">
+    <table class="style16" style="width: 1373px">
+        <tr>
+            <td class="style17" style="width: 1243px">
+                <asp:Panel ID="Panel1" runat="server" Height="39px" BorderStyle="Solid" CssClass="auto-style1" BackColor="#00CC00" BorderColor="#660033" BorderWidth="2px" Width="729px">
+                    <asp:Menu ID="Menu3" runat="server" Orientation="Horizontal" style="font-size: medium" BackColor="#00CC00" >
+                        <DynamicHoverStyle BackColor="#CCCCCC" />
+                        <DynamicMenuItemStyle BackColor="Black" ForeColor="White" />
+                        <DynamicMenuStyle HorizontalPadding="10px" VerticalPadding="10px" Width="140px" />
+                        <Items>
+                            <asp:MenuItem Text="Personal Information" Value="Personal Information" Selectable="False">
+                                <asp:MenuItem NavigateUrl="~/Staff/myBioData.aspx" Text="View" Value="View"></asp:MenuItem>
+                                <asp:MenuItem Text="Edit" Value="Edit">
+                                    <asp:MenuItem NavigateUrl="~/Staff/StaffNextofKin.aspx" Text="Next of Kin" Value="Next of Kin"></asp:MenuItem>
+                                </asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Applications" Value="Applications" NavigateUrl="~/Staff/Applications.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="View" Value="View">
+                                <asp:MenuItem NavigateUrl="~/Staff/myWorkHistory.aspx" Text="Work History" Value="Work History"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Staff/myPromotionHistory.aspx" Text="Promotion History" Value="Promotion History"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </Items>
+                        <StaticHoverStyle BorderColor="White" BorderStyle="Solid" BorderWidth="2px" />
+                        <StaticMenuItemStyle ForeColor="White" HorizontalPadding="5px" VerticalPadding="5px" />
+                    </asp:Menu>
+                </asp:Panel>
+                <ajaxToolkit:DropShadowExtender ID="Panel1_DropShadowExtender" runat="server" BehaviorID="Panel1_DropShadowExtender" TargetControlID="Panel1" />
+            </td>
+            <td class="auto-style2" style="width: 474px; text-align: center;">
+                <asp:LinkButton ID="lnkRetirementLetter" runat="server" BackColor="#00CC00" BorderColor="Black" BorderStyle="Dashed" BorderWidth="2px" Font-Bold="True" Font-Size="Medium" ForeColor="Black" Height="40px" PostBackUrl="~/retirementLetter.aspx" Width="192px">Retirement Letter</asp:LinkButton>
+            </td>
+        </tr>
+        <tr>
+            <td class="style17" colspan="2">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+        <tr>
+            <td class="style17" colspan="2">
+                &nbsp;</td>
+        </tr>
+    </table>
+</asp:Content>
